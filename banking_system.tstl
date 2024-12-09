@@ -2,16 +2,16 @@
 import banking_system
 
 # Create a new bank
-ACTION new_bank = "bank = banking_system.Bank()"
+ACTION("new_bank", "bank = banking_system.Bank()")
 
 # Create an account
-ACTION create_account = "bank.create_account('12345', 'John Doe')"
+ACTION("create_account", "bank.create_account('12345', 'John Doe')")
 
 # Get the account
-ACTION get_account = "account = bank.get_account('12345')"
+ACTION("get_account", "account = bank.get_account('12345')")
 
 # Deposit money
-ACTION deposit = "if account: account.deposit(100)"
+ACTION("deposit", "if account: account.deposit(100)")
 
 # Assertions to validate state
-ASSERT "assert account.get_balance() == 100"
+ASSERT("account.get_balance() == 100")

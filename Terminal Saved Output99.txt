@@ -1,0 +1,103 @@
+Last login: Sun Dec  8 13:23:52 on ttys000
+likhitharoyal@Likhithas-MBP 2 % docker pull agroce/deepstate_examples_aflpp
+Using default tag: latest
+latest: Pulling from agroce/deepstate_examples_aflpp
+Digest: sha256:84cc4dcda7dbb98a206e4a69614ce3bf78b31255bc6b0216621127575b63e930
+Status: Image is up to date for agroce/deepstate_examples_aflpp:latest
+docker.io/agroce/deepstate_examples_aflpp:latest
+likhitharoyal@Likhithas-MBP 2 % docker run -it agroce/deepstate_examples_aflpp
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+user@bff921889a61:~/deepstate$ pip3 install tstl
+Defaulting to user installation because normal site-packages is not writeable
+Collecting tstl
+  Downloading tstl-1.2.39-py3-none-any.whl (108 kB)
+     |################################| 108 kB 3.1 MB/s            
+Collecting coverage==4.5.2
+  Downloading coverage-4.5.2-cp36-cp36m-manylinux1_x86_64.whl (205 kB)
+     |################################| 205 kB 11.9 MB/s            
+Installing collected packages: coverage, tstl
+Successfully installed coverage-4.5.2 tstl-1.2.39
+user@bff921889a61:~/deepstate$ pip3 install universalmutator --upgrade
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: universalmutator in /home/user/.local/lib/python3.6/site-packages (1.1.11)
+Collecting universalmutator
+  Downloading universalmutator-1.1.12-py3-none-any.whl (42 kB)
+     |################################| 42 kB 1.6 MB/s            
+Requirement already satisfied: tabulate in /home/user/.local/lib/python3.6/site-packages (from universalmutator) (0.8.10)
+Requirement already satisfied: python-levenshtein in /home/user/.local/lib/python3.6/site-packages (from universalmutator) (0.21.1)
+Requirement already satisfied: comby in /home/user/.local/lib/python3.6/site-packages (from universalmutator) (0.0.3)
+Requirement already satisfied: typing>=0.4 in /home/user/.local/lib/python3.6/site-packages (from comby->universalmutator) (3.7.4.3)
+Requirement already satisfied: attrs>=19.2.0 in /home/user/.local/lib/python3.6/site-packages (from comby->universalmutator) (22.2.0)
+Requirement already satisfied: loguru>=0.4 in /home/user/.local/lib/python3.6/site-packages (from comby->universalmutator) (0.7.0)
+Requirement already satisfied: requests~=2.0 in /home/user/.local/lib/python3.6/site-packages (from comby->universalmutator) (2.27.1)
+Requirement already satisfied: Levenshtein==0.21.1 in /home/user/.local/lib/python3.6/site-packages (from python-levenshtein->universalmutator) (0.21.1)
+Requirement already satisfied: rapidfuzz<4.0.0,>=2.3.0 in /home/user/.local/lib/python3.6/site-packages (from Levenshtein==0.21.1->python-levenshtein->universalmutator) (2.11.1)
+Requirement already satisfied: aiocontextvars>=0.2.0 in /home/user/.local/lib/python3.6/site-packages (from loguru>=0.4->comby->universalmutator) (0.2.2)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /home/user/.local/lib/python3.6/site-packages (from requests~=2.0->comby->universalmutator) (2.0.12)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /home/user/.local/lib/python3.6/site-packages (from requests~=2.0->comby->universalmutator) (1.26.16)
+Requirement already satisfied: certifi>=2017.4.17 in /home/user/.local/lib/python3.6/site-packages (from requests~=2.0->comby->universalmutator) (2023.7.22)
+Requirement already satisfied: idna<4,>=2.5 in /usr/lib/python3/dist-packages (from requests~=2.0->comby->universalmutator) (2.6)
+Requirement already satisfied: contextvars==2.4 in /home/user/.local/lib/python3.6/site-packages (from aiocontextvars>=0.2.0->loguru>=0.4->comby->universalmutator) (2.4)
+Requirement already satisfied: immutables>=0.9 in /home/user/.local/lib/python3.6/site-packages (from contextvars==2.4->aiocontextvars>=0.2.0->loguru>=0.4->comby->universalmutator) (0.19)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in /home/user/.local/lib/python3.6/site-packages (from immutables>=0.9->contextvars==2.4->aiocontextvars>=0.2.0->loguru>=0.4->comby->universalmutator) (4.1.1)
+Installing collected packages: universalmutator
+  Attempting uninstall: universalmutator
+    Found existing installation: universalmutator 1.1.11
+    Uninstalling universalmutator-1.1.11:
+      Successfully uninstalled universalmutator-1.1.11
+Successfully installed universalmutator-1.1.12
+user@bff921889a61:~/deepstate$ cd 2
+bash: cd: 2: No such file or directory
+user@bff921889a61:~/deepstate$ cd desktop 
+bash: cd: desktop: No such file or directory
+user@bff921889a61:~/deepstate$ cd ~/user/2
+bash: cd: /home/user/user/2: No such file or directory
+user@bff921889a61:~/deepstate$ ls 
+CMakeLists.txt  bin              build_libfuzzer  extras         push
+LICENSE         build            docker           fix_reducer    src
+README.md       build_afl        docs             mypy.ini       tests
+Vagrantfile     build_deepstate  examples         new_deepstate
+user@bff921889a61:~/deepstate$ cd desktop
+bash: cd: desktop: No such file or directory
+user@bff921889a61:~/deepstate$ docker run -it -v ~/Desktop/2:/path/in/container --name my_container_name agroce/deepstate_examples_aflpp
+bash: docker: command not found
+user@bff921889a61:~/deepstate$ 
+user@bff921889a61:~/deepstate$ docker run -it -v ~/Desktop/2:/home/user/project --name my_container_name agroce/deepstate_examples_aflpp
+bash: docker: command not found
+user@bff921889a61:~/deepstate$ cd ~/Desktop/2
+bash: cd: /home/user/Desktop/2: No such file or directory
+user@bff921889a61:~/deepstate$ cd Desktop/2
+bash: cd: Desktop/2: No such file or directory
+user@bff921889a61:~/deepstate$ apt-get update
+Reading package lists... Done
+E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)
+E: Unable to lock directory /var/lib/apt/lists/
+user@bff921889a61:~/deepstate$ apt-get install emacs-nox
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+user@bff921889a61:~/deepstate$ emacs
+user@bff921889a61:~/deepstate$ emacs ~/Desktop/2/somefile.c
+user@bff921889a61:~/deepstate$ emacs ~/Desktop/2/somefile.c
+user@bff921889a61:~/deepstate$ emacs ~/Desktop/2
+user@bff921889a61:~/deepstate$ /Users/likhitharoyal/Desktop/2 
+bash: /Users/likhitharoyal/Desktop/2: No such file or directory
+user@bff921889a61:~/deepstate$ cd Users
+bash: cd: Users: No such file or directory
+user@bff921889a61:~/deepstate$ docker pull agroce/deepstate_examples_aflpp
+bash: docker: command not found
+user@bff921889a61:~/deepstate$ docker run -it -v /Users/likhitharoyal/Desktop/2:/deepstate --name my_container_name agroce/deepstate_examples_aflpp
+bash: docker: command not found
+user@bff921889a61:~/deepstate$ docker run -it -v /Users/likhitharoyal/Desktop/2:/deepstate --name deepstate_container agroce/deepstate_examples_aflpp
+bash: docker: command not found
+user@bff921889a61:~/deepstate$ docker run -it -v /Users/likhitharoyal/Desktop/2:/deepstate agroce/deepstate_examples_aflpp
+bash: docker: command not found
+user@bff921889a61:~/deepstate$ which docker
+user@bff921889a61:~/deepstate$ docker pull agroce/deepstate_examples_aflpp
+bash: docker: command not found
+user@bff921889a61:~/deepstate$ docker run -it -v /Users/likhitharoyal/Desktop/2:/deepstate agroce/deepstate_examples_aflpp
+bash: docker: command not found
+user@bff921889a61:~/deepstate$ cd 2
+bash: cd: 2: No such file or directory
+user@bff921889a61:~/deepstate$ docker --version
+bash: docker: command not found
+user@bff921889a61:~/deepstate$ 
